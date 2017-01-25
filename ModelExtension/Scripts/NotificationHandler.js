@@ -1,11 +1,13 @@
 ﻿var notificationHandler = function(event)
 {
+    // only proceed if the message is the message we broadcasted ourself from the CM eventhandler
     if (event.data.action !== "tcm:finished")
     {
         return;
     }
     var userSettings = Tridion.ContentManager.UserSettings.getInstance();
 
+    // only process the message when it is meant for this user
     if (event.data.details.creatorId === userSettings.getUserId())
     {
         if (Tridion.MessageCenter.getInstance())
