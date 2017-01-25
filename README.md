@@ -1,6 +1,6 @@
 # The extension
 This extension is built as a showcase on how to use the Notification Framework added to SDL Web.
-It shows how to create a CM eventhandler to broadcast a message using the Framework and an UI model extension to respond to the broadcasted message.
+It shows how to create a CM eventhandler to broadcast a message when a Publish Transaction is finished using the Framework and an UI model extension to respond to the broadcasted message to show a notification with the status.
 
 **NOTICE**
 Be aware that you should not send any sensitive data using the Notification Framework as the message will be sent to _all_ clients without any respect to Privileges, Rights or Permissions.
