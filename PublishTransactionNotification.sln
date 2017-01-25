@@ -7,6 +7,15 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventHandler", "EventHandle
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModelExtension", "ModelExtension\ModelExtension.csproj", "{0EF11782-D06F-4A20-982E-830B81A79076}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Libraries", "Libraries", "{A40D8C45-149D-4C48-A367-E276DC5D3C8E}"
+	ProjectSection(SolutionItems) = preProject
+		Libraries\Newtonsoft.Json.dll = Libraries\Newtonsoft.Json.dll
+		Libraries\Tridion.Common.dll = Libraries\Tridion.Common.dll
+		Libraries\Tridion.ContentManager.Common.dll = Libraries\Tridion.ContentManager.Common.dll
+		Libraries\Tridion.ContentManager.dll = Libraries\Tridion.ContentManager.dll
+		Libraries\Tridion.ContentManager.Publishing.dll = Libraries\Tridion.ContentManager.Publishing.dll
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
