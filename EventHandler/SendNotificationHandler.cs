@@ -12,10 +12,10 @@ namespace PublishTransactionNotification.EventHandler
         public SendNotificationHandler()
         {
             // subscribe to the save event for publish transactions
-            EventSystem.Subscribe<PublishTransaction, SaveEventArgs>(SendNotification, EventPhases.Processed);
+            EventSystem.Subscribe<PublishTransaction, SaveEventArgs>(SendNotification, EventPhases.TransactionCommitted);
         }
 
-        private static void SendNotification(PublishTransaction subject, TcmEventArgs e, EventPhases phases)
+        private static void SendNotification(PublishTransaction subject, SaveEventArgs e, EventPhases phases)
         {
             // only send a message when the publishing is finished. The publish transaction gets saved at least when created and on a status update 
             if (!subject.IsCompleted)
@@ -34,7 +34,7 @@ namespace PublishTransactionNotification.EventHandler
             NotificationMessage message = new NotificationMessage
             {
                 // we need an identifier that we can use in the UI extension to distinguish our messages from others
-                Action = "tcm:finished",
+                Action = "tcm:publishtransactionfinished",
                 SubjectIds = new[] { subject.Id.ToString() },
                 Details = details.ToString()
             };
