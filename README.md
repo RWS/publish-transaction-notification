@@ -32,7 +32,7 @@ A better mechanism is to send a message that item with id tcm:x-y-z has been cha
 4. Update the models section in the `C:\Program Files (x86)\SDL Web\web\WebUI\WebRoot\Configuration\System.config` configuration file to load the UI model extension
 
         <model name="PublishTransactionNotification">
-            <installpath>C:\Program Files (x86)\SDL Web\web\WebUI\Editors\PublishTransactionNotification\</installpath>
+            <installpath>C:\Program Files (x86)\SDL Web\web\WebUI\Models\PublishTransactionNotification\</installpath>
             <configuration>Configuration\PublishTransactionNotification.config</configuration>
             <vdir>PublishTransactionNotification</vdir>
         </model>
