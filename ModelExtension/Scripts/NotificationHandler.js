@@ -1,7 +1,7 @@
 ﻿var notificationHandler = function(event)
 {
     // only proceed if the message is the message we broadcasted ourself from the CM eventhandler
-    if (event.data.action !== "tcm:publishtransactionfinished")
+    if (event.data.action !== "example:publishtransactionfinished")
     {
         return;
     }

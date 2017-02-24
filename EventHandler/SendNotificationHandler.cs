@@ -34,7 +34,7 @@ namespace PublishTransactionNotification.EventHandler
             NotificationMessage message = new NotificationMessage
             {
                 // we need an identifier that we can use in the UI extension to distinguish our messages from others
-                Action = "tcm:publishtransactionfinished",
+                Action = "example:publishtransactionfinished",
                 SubjectIds = new[] { subject.Id.ToString() },
                 Details = details.ToString()
             };
