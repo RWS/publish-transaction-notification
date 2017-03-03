@@ -12,7 +12,7 @@ A better mechanism is to send a message that item with id tcm:x-y-z has been cha
 
 # Setup
 ## Add assembly references
-1. Add the following assembly references in the `Libraries` folder
+1. Add the following assembly references in the `\Libraries` folder
     * Tridion.Common.dll, version >= 8.2
     * Tridion.ContentManager.Common.dll, version >= 8.2
     * Tridion.ContentManager.dll, version >= 8.2
@@ -54,4 +54,4 @@ A better mechanism is to send a message that item with id tcm:x-y-z has been cha
 2. Create an UI event handler (`\ModelExtension\Scripts\NotificationHandler.js`) that will subscribe to notifications. For this exercise you need to make sure that:
     * the eventhandler only processes the notification if it is the notification send by the CM eventhandler created in step 1
     * the eventhandler only processes the notification if the logged in user is the same as the creator of the Publish Transaction
-    * the eventhanlder shows a Message Center notification that notifies the user his/her Publish Transaction has finished (together with the state)
+    * the eventhandler shows a Message Center notification that notifies the user his/her Publish Transaction has finished (together with the state)
