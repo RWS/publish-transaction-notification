@@ -13,11 +13,12 @@ A better mechanism is to send a message that item with id tcm:x-y-z has been cha
 # Setup
 ## Add assembly references
 1. Add the following assembly references in the `Libraries` folder
-    * Tridion.Common.dll
-    * Tridion.ContentManager.Common.dll
-    * Tridion.ContentManager.dll
-    * Tridion.ContentManager.Publishing.dll
-    * Newtonsoft.Json.dll
+    * Tridion.Common.dll, version >= 8.2
+    * Tridion.ContentManager.Common.dll, version >= 8.2
+    * Tridion.ContentManager.dll, version >= 8.2
+    * Tridion.ContentManager.Publishing.dll, version >= 8.2
+    * Newtonsoft.Json.dll, version >= 6.0
+
 ## Configure the CM event handler
 1. Build the solution and copy the output assembly `\EventHandler\bin\(Release|Debug)\PublishTransactionNotification.EventHandler.dll` to 
  the folder `C:\Program Files (x86)\SDL Web\bin\` on your SDL Web instance
