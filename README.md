@@ -11,8 +11,15 @@ A better mechanism is to send a message that item with id tcm:x-y-z has been cha
 * [Notification framework](http://docs.sdl.com/LiveContent/content/en-US/SDL%20Web-v5/GUID-0282D1DD-748A-49F1-B231-DB8DC89B6AC9)
 
 # Setup
+## Add assembly references
+1. Add the following assembly references in the `Libraries` folder
+    * Tridion.Common.dll
+    * Tridion.ContentManager.Common.dll
+    * Tridion.ContentManager.dll
+    * Tridion.ContentManager.Publishing.dll
+    * Newtonsoft.Json.dll
 ## Configure the CM event handler
-1. Build the solution and copy the output assembly `PublishTransactionNotification\EventHandler\bin\(Release|Debug)\PublishTransactionNotification.EventHandler.dll` to 
+1. Build the solution and copy the output assembly `\EventHandler\bin\(Release|Debug)\PublishTransactionNotification.EventHandler.dll` to 
  the folder `C:\Program Files (x86)\SDL Web\bin\` on your SDL Web instance
 2. Update the extensions section in the `C:\Program Files (x86)\SDL Web\config\Tridion.ContentManager.config` configuration file to load the CM event handler
 
@@ -25,7 +32,7 @@ A better mechanism is to send a message that item with id tcm:x-y-z has been cha
 
 ## Configure the UI model extension
 1. Create a new folder `PublishTransactionNotification` in the folder `C:\Program Files (x86)\SDL Web\web\WebUI\Models\` on your SDL Web instance
-2. Copy the following subdirectories from `PublishTransactionNotification\ModelExtension\` into the folder created in step 1:
+2. Copy the following subdirectories from `\ModelExtension\` into the folder created in step 1:
     * \Configuration
     * \Scripts
 3. Create a virtual directory `PublishTransactionNotification` for the model extension in IIS Manager under `Sites\SDL Web\WebUI\Models\` that uses the physical path `C:\Program Files (x86)\SDL Web\web\WebUI\Models\PublishTransactionNotification\`
@@ -39,11 +46,11 @@ A better mechanism is to send a message that item with id tcm:x-y-z has been cha
 5. Increase the `modification` attribute on the `server` element by 1 to force the browsers to get a new version of the code.
 
 ## Exercise
-1. Create a CM event handler (`PublishTransactionNotification\EventHandler\SendNotificationHandler.cs`) that will send a message to clients when a PublishTransaction finishes. For this exercise you need to send (at least) the following data:
+1. Create a CM event handler (`\EventHandler\SendNotificationHandler.cs`) that will send a message to clients when a PublishTransaction finishes. For this exercise you need to send (at least) the following data:
     * Title
     * Creator
     * Status   
-2. Create an UI event handler (`PublishTransactionNotification\ModelExtension\Scripts\NotificationHandler.js`) that will subscribe to notifications. For this exercise you need to make sure that:
+2. Create an UI event handler (`\ModelExtension\Scripts\NotificationHandler.js`) that will subscribe to notifications. For this exercise you need to make sure that:
     * the eventhandler only processes the notification if it is the notification send by the CM eventhandler created in step 1
     * the eventhandler only processes the notification if the logged in user is the same as the creator of the Publish Transaction
     * the eventhanlder shows a Message Center notification that notifies the user his/her Publish Transaction has finished (together with the state)
